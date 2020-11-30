@@ -21,10 +21,10 @@ If you're using any code style like xo, standard etc. That will help others whil
 Include logo/demo screenshot etc.
 
 ## Tech/framework used
-Ex. -
 
 <b>Built with</b>
-- [Electron](https://electron.atom.io)
+- [Node.js](https://nodejs.org/en/)
+- [express.js](https://expressjs.com/)
 
 ## Features
 What makes your project stand out?
