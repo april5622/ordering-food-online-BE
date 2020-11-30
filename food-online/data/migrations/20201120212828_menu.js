@@ -1,10 +1,7 @@
 
 exports.up = async function(knex) {
     await knex.schema.createTable("menu", (table) => {
-        table.increments("id")
-        table.text("dish").notNull()
-        table.string("price").notNull()
-        table.text("description").notNull()
+        table.increments("id").primary()
         table.integer("restaurants_id")
             .references("id")
             .inTable("restaurants")
@@ -15,6 +12,9 @@ exports.up = async function(knex) {
             .inTable("categories")
             .onDelete("CASCADE")
             .onUpdate("CASCADE")
+        table.text("dish").notNull()
+        table.string("price").notNull()
+        table.text("description").notNull()
        
     })  
   
