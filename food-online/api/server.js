@@ -8,6 +8,7 @@ dotenv.config()
 const restrict = require("../middleware/restrict");
 const authRouter = require("../auth/auth-router");
 const usersRouter = require("../users/users-router");
+const restaurantRouter = require("../restaurants/restaurants-router");
 
 const server = express();
 
@@ -19,6 +20,7 @@ server.use(cookieParser());
 
 server.use("/auth", authRouter);
 server.use("/users", restrict(), usersRouter)
+server.use("restaurants", restrict(), restaurantRouter)
 
 server.get('/', (req, res) => {
   res.send('Hello World!')
