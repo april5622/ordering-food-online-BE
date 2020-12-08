@@ -1,20 +1,20 @@
 const db = require("../db");
 
 function getMenu() {
-    return db("menu")
-    .join(
-        'restaurants',
-        'restaurants.id', 
-        'menu.restaurants_id',
-        'categories',
-        'categories.id',
-        'menu.category_id'
-     )
-    .select(
-        'menu.*',
-        'restaurants.name as restaurant',
-        'categories.name as category'
-    )
+    return db('menu')
+    // .join(
+    //     'restaurants',
+    //     'restaurants.id', 
+    //     'menu.restaurants_id',
+    //     'categories',
+    //     'categories.id',
+    //     'menu.category_id'
+    //  )
+    // .select(
+    //     'menu.*',
+    //     'restaurants.name as restaurant',
+    //     'categories.name as category'
+    // )
 
 }
 
@@ -25,17 +25,18 @@ function getMenuId(id){
 }
 
 async function addMenu(menu){
-    const restaurants_id = await db('restaurants')
-        .where({ name: menu.restaurant.toLowerCase()})
-        .select("id")
-        .first()
-    const category_id = await db('categories')
-        .where({ name: menu.category.toLowerCase()})
-        .select("id")
-        .first()
-    if (menu.restaurant, menu.category_id) delete (menu.restaurant, menu.category)
+    // const restaurants_id = await db('restaurants')
+    //     .where({ name: menu.restaurant.toLowerCase() })
+    //     .select("id")
+    //     .first()
+    // const category_id = await db('categories')
+    //     .where({ name: menu.category.toLowerCase() })
+    //     .select("id")
+    //     .first()
+    //if (menu.restaurants, menu.category) delete (menu.restaurants, menu.category)
     return db('menu')
-        .insert({...menu, restaurants_id, category_id})
+        //.insert({...menu, category_id})
+        .insert(menu)
         .then((ids) => {
             return getMenuId(ids[0])
         })

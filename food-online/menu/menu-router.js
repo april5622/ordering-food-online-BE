@@ -1,6 +1,6 @@
 const express = require('express');
 const menu = require('./menu-model');
-const restrict = restrict('../middleware/restrict.js')
+const restrict = require('../middleware/restrict.js')
 const { validateMenuId } = require("../middleware/validate")
 
 const router = express.Router()
