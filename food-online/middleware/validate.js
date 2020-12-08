@@ -1,4 +1,5 @@
 const restaurant= require("../restaurants/restaurants-model")
+const menu = require("../menu/menu-model")
 const users = require("../users/users-model")
 
 function validateUserId(){
@@ -60,8 +61,29 @@ function validateRestaurantId() {
     }
 }
 
+function validateMenuId() {
+    return(req, res, next) => {
+        menu.getMenuId(req.params.id)
+        .then((menu) => {
+            if(menu){
+                req.menu = menu
+                next()
+            } else {
+                res.status(400).json({
+                    message: "Invalid Menu ID"
+                })
+            }
+        })
+        .catch(err => {
+            next(err)
+        })
+
+    }
+}
+
 module.exports = {
     validateUser,
     validateUserId,
-    validateRestaurantId
+    validateRestaurantId,
+    validateMenuId
 }
