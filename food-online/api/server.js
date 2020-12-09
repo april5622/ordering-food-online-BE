@@ -3,7 +3,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const dotenv = require('dotenv');
-dotenv.config()
+dotenv.config();
 
 const restrict = require("../middleware/restrict");
 const authRouter = require("../auth/auth-router");
