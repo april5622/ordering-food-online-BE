@@ -16,6 +16,7 @@ If you're using any code style like xo, standard etc. That will help others whil
  
 ## Screenshots
 Include logo/demo screenshot etc.
+[Deployed Heroku Link](https://food-online-be.herokuapp.com/)
 
 ## Tech/framework used
 
@@ -31,10 +32,6 @@ Show what the library does as concisely as possible, developers should be able t
 
 ## Installation
 Provide step by step series of examples and explanations about how to get a development env running.
-
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
 
 ## Tests
 Describe and show how to run the tests with code examples.
