@@ -5,22 +5,21 @@ const jwt = require ("jsonwebtoken");
 
 const router = express.Router()
 
-router.post("/register", async (req, res, next) => {
+router.post('/register', async (req, res, next) => {
     try {
-        const {username} = req.body
-        const user = await users.findBy({username}).first()
-
+      const {username} = req.body
+      const user = await users.findBy({username}).first()
+  
         if(user){
             return res.status(409).json({
-                message: "Username Already Taken"
+                message: "username already taken"
             })
         }
         res.status(201).json(await users.add(req.body))
-    }catch(err) {
+    } catch(err) {
         next(err)
     }
-
-})
+});
 
 router.post("/login", async (req, res, next) => {
     const authError = {
@@ -39,7 +38,7 @@ router.post("/login", async (req, res, next) => {
         const tokenPayload = {
             userId: user.id,
         }
-        res.cookie("token", jwt.sign(tokenPayload, process.env.JWT_SECRET))
+        //res.cookie("token", jwt.sign(tokenPayload, process.env.JWT_SECRET))
         res.json({
             message: `Welcome ${user.username}!`,
             token: jwt.sign(tokenPayload, process.env.JWT_SECRET)

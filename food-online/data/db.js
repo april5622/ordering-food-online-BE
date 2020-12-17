@@ -1,4 +1,4 @@
-const knex = require('knex')(process.env.DB_URL);
+const knex = require('knex');
 
 const knexfile = require('../knexfile');
 
