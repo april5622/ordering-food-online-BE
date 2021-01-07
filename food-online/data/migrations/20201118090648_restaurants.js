@@ -4,6 +4,7 @@ exports.up = async function(knex) {
         table.increments("id")
         table.text("name").notNull().unique()
         table.text("description").notNull()
+        table.text("photo")
         
   
     })  
