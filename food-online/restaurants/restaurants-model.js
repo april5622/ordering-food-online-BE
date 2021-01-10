@@ -4,7 +4,7 @@ function getRestaurants(){
     return db('restaurants')
 }
 
-function getRestaurantId(){
+function getRestaurantId(id){
     return db('restaurants')
     .where({id})
     .first()

@@ -31,6 +31,8 @@ router.get('/:id', (req, res, next) => {
     })
 })
 
+
+
 router.post('/', (req, res, next) => {
     restaurants.addRestaurant({...req.body, user_id: req.token.userId})
     .then(restaurant => {
