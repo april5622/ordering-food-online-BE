@@ -2,19 +2,27 @@ const db = require("../data/db");
 
 function getMenu() {
     return db('menu')
-    // .join(
-    //     'restaurants',
-    //     'restaurants.id', 
-    //     'menu.restaurants_id',
-    //     'categories',
-    //     'categories.id',
-    //     'menu.category_id'
-    //  )
-    // .select(
-    //     'menu.*',
-    //     'restaurants.name as restaurant',
-    //     'categories.name as category'
-    // )
+    .join(
+        'restaurants',
+        'restaurants.id', 
+        'menu.restaurants_id',
+        // 'categories',
+        // 'categories.id',
+        // 'menu.category_id'
+     )
+     .join(
+        'categories',
+        'categories.id',
+        'menu.category_id'
+     )
+    .select(
+        'menu.*',
+        'restaurants.name as restaurant',
+        //'categories.name as category'
+    )
+    .select(
+        'categories.name as category'
+    )  
 
 }
 
