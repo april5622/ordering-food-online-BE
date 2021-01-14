@@ -31,6 +31,22 @@ router.get('/:id', (req, res, next) => {
     })
 })
 
+router.get('/restaurant/:restaurants_id', (req, res, next) => {
+    menu.getMenuByRestId(req.params.restaurants_id)
+    .then(menu => {
+        if(menu){
+            res.json(menu)
+        } else {
+            res.status(401).json({
+                message: "no menu from restaurant"
+            })
+        }
+    })
+    .catch(err => {
+        next(err)
+    })
+})
+
 router.post('/', (req, res, next) => {
     menu.addMenu({ ...req.body, user_id: req.token.userId })
     .then(menu => {

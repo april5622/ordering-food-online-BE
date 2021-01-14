@@ -32,18 +32,23 @@ function getMenuId(id){
     .first()
 }
 
-async function addMenu(menu){
-    // const restaurants_id = await db('restaurants')
-    //     .where({ name: menu.restaurant.toLowerCase() })
-    //     .select("id")
-    //     .first()
-    // const category_id = await db('categories')
-    //     .where({ name: menu.category.toLowerCase() })
-    //     .select("id")
-    //     .first()
-    //if (menu.restaurants, menu.category) delete (menu.restaurants, menu.category)
+function getMenuByRestId(restaurants_id){
     return db('menu')
-        //.insert({...menu, category_id})
+    .where({restaurants_id})
+}
+
+async function addMenu(menu){
+    const restaurants_id = await db('restaurants')
+        .where({ name: menu.restaurant.toLowerCase() })
+        .select("id")
+        .first()
+    const category_id = await db('categories')
+        .where({ name: menu.category.toLowerCase() })
+        .select("id")
+        .first()
+    if (menu.restaurants &&  menu.category) delete (menu.restaurants && menu.category)
+    return db('menu')
+        .insert({...menu, restaurants_id, category_id})
         .insert(menu)
         .then((ids) => {
             return getMenuId(ids[0])
@@ -69,5 +74,6 @@ module.exports = {
     getMenuId,
     addMenu,
     updateMenu,
-    removeMenu
+    removeMenu,
+    getMenuByRestId
 }
