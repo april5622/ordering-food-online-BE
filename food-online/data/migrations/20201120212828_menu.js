@@ -15,6 +15,7 @@ exports.up = async function(knex) {
         table.text("dish").notNull()
         table.string("price").notNull()
         table.text("description").notNull()
+        table.text("photo")
        
     })  
   
