@@ -2,7 +2,7 @@
 A little RESTful API for the my front-end application called ordering-food-online.
 
 ## Motivation
-This is my first solo full stack project and I thought making a food ordering app like doordash. Especially I can't stop thinking about food.
+This is my first solo full stack project and I thought making a food ordering app like Doordash. Especially I can't stop thinking about food.
 
 ## Build status
 Build status of continus integration i.e. travis, appveyor etc. Ex. - 
