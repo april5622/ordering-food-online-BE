@@ -84,6 +84,8 @@ Contributions are what make the open source community such an amazing place to b
 ## Credits
 Credit goes to Strapi's blog article, [Create a food ordering app with Strapi and Next.js](https://strapi.io/blog/nextjs-react-hooks-strapi-food-app-1) for inspiring me to make my own.
 
+Nguyễn Thanh Hòa for his post on [Building a Shopping Cart with React Redux](https://dev.to/skipperhoa/build-a-shopping-cart-with-react-redux-1n97).
+
 ## License
 
 MIT © [April Ma](https://aprilma.com/)
