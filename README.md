@@ -28,7 +28,7 @@ You can find the deployed project[here](https://food-online-be.herokuapp.com/)
 ## Frontend Github Repo
 https://github.com/april5622/ordering-food-online
 
-### Setup postgres
+## Setup postgres
 
 There are 3 options to get postgresql installed locally [Choose one]:
 
@@ -56,7 +56,7 @@ There are 3 options to get postgresql installed locally [Choose one]:
 - run: `npm run tests` to confirm all is setup and tests pass.
 - run: `npm run watch:dev` to start nodemon in local dev enviornment.
 
-## Enviornment Variables
+### Enviornment Variables
 - `PORT` - API port (optional, but helpful with FE running as well)
     - 3000
     - 8000
