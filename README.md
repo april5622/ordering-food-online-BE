@@ -22,6 +22,7 @@ You can find the deployed project[here](https://food-online-be.herokuapp.com/)
 <b>Built with</b>
 - [Node.js](https://nodejs.org/en/)
 - [express.js](https://expressjs.com/)
+- [PostgreSQL](https://www.postgresql.org/)
 
 ## Features
 
